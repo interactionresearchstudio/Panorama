@@ -2,6 +2,7 @@ import cv2
 import json
 import time
 import datetime
+import os
 
 # pi specific imports
 from picamera.array import PiRGBArray
@@ -9,6 +10,7 @@ from picamera import PiCamera
 import RPi.GPIO as GPIO
 
 # load configuration file
+os.chdir("/home/pi/BlankExample")
 config = json.load(open("config.json"))
 
 # open fullscreen window

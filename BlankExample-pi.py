@@ -45,5 +45,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     # show image
     cv2.imshow("Output", image)
 
+    # clear buffer
+    rawCapture.truncate(0)
 
 cv2.destroyWindow("Output")

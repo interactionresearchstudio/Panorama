@@ -42,12 +42,14 @@ GPIO.setup(btn4, GPIO.IN, GPIO.PUD_UP)
 for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
     # get new frame
     image = frame.array
+    # end of new frame
     
     # show image
     cv2.imshow("Output", image)
 
     # clear buffer
-    key = cv2.waitKey(10)
     rawCapture.truncate(0)
+    key = cv2.waitKey(10)
+    # end of loop
 
 cv2.destroyWindow("Output")
